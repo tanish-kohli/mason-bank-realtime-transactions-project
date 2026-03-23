@@ -8,7 +8,7 @@ The system is designed to handle both:
 
 * Real-time alerting for critical transactions
 * Batch-oriented analytical processing
-
+gi
 ---
 
 ## End-to-End Flow
