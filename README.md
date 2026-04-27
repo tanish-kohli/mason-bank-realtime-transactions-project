@@ -8,7 +8,6 @@ The system is designed to handle both:
 
 * Real-time alerting for critical transactions
 * Batch-oriented analytical processing
-gi
 ---
 
 ## End-to-End Flow
@@ -16,14 +15,11 @@ gi
 1. AWS Glue job acts as a **Kafka Producer** generating transaction data
 2. Apache Kafka (hosted on EC2) ingests and streams data
 3. Two consumers process the data:
-
    * Alert Consumer → Detects failed and high-value transactions
    * Analytics Consumer → Pushes data into S3 (Raw Layer)
 4. ETL jobs transform data across layers:
-
    * Raw → Processed → Curated
 5. Curated data is queried using **Amazon Athena**
-6. Workflows are orchestrated using **AWS Step Functions**
 
 ---
 
@@ -38,7 +34,6 @@ gi
 | Data Processing | PySpark (AWS Glue Jobs) |
 | Storage         | Amazon S3               |
 | Query Engine    | Amazon Athena           |
-| Orchestration   | AWS Step Functions      |
 | Language        | Python                  |
 
 ---
@@ -49,11 +44,10 @@ gi
 mason-bank-realtime-transactions/
 │
 ├── producer/              # Glue job for Kafka producer
-├── kafka/                 # Kafka setup and configurations
+├── kafka_setup/           # Kafka setup and configurations
 ├── consumers/             # Alert and analytics consumers
-├── data_pipeline/         # Raw, Processed, Curated layers
-├── orchestration/         # Step Functions definitions
 └── architecture/          # Architecture diagram
+└── README.md              # project walkthrough and summary
 ```
 
 ---
@@ -89,27 +83,6 @@ This design ensures scalability, data quality, and efficient querying.
 
 ---
 
-## Orchestration
-
-AWS Step Functions are used to:
-
-* Manage ETL workflows
-* Handle job dependencies
-* Ensure pipeline reliability
-
----
-
-## Key Highlights
-
-* Built a real-time streaming pipeline using Apache Kafka on EC2
-* Implemented dual-consumer architecture for alerting and analytics
-* Designed a scalable data lake (Raw → Processed → Curated) on Amazon S3
-* Developed ETL pipelines using **PySpark in AWS Glue**
-* Enabled serverless querying using Amazon Athena
-* Orchestrated workflows using AWS Step Functions
-
----
-
 ## Getting Started
 
 ### Prerequisites
@@ -125,8 +98,7 @@ AWS Step Functions are used to:
 2. Deploy and run the Glue Producer job
 3. Start Kafka consumers
 4. Execute PySpark ETL jobs for data transformation
-5. Deploy Step Functions workflow
-6. Query curated data using Athena
+5. Query curated data using Athena
 
 ---
 
