@@ -121,7 +121,7 @@ AWS Step Functions are used to:
 
 ### Setup Steps
 
-1. Configure Kafka on EC2 (refer to `/kafka/setup_commands.md`)
+1. Configure Kafka on EC2 (refer to `kafka_setup/mason-bank-kafka-setup.md`)
 2. Deploy and run the Glue Producer job
 3. Start Kafka consumers
 4. Execute PySpark ETL jobs for data transformation
