@@ -47,7 +47,6 @@ mason-bank-realtime-transactions/
 ├── kafka_setup/           # Kafka setup and configurations
 ├── consumers/             # Alert and analytics consumers
 └── architecture/          # Architecture diagram
-└── README.md              # project walkthrough and summary
 ```
 
 ---
